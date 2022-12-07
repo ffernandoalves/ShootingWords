@@ -23,7 +23,6 @@ pygame.display.set_caption("Shooting Words")
 
 list_words = ["cachorro", "planta", "arvore", "bolo", "maça"]
 
-
 clock = pygame.time.Clock()
 
 pos_y = 0
@@ -33,6 +32,9 @@ VELOCIDA_QUEDA = 1.5
 
 TEXT_DELAY = 2000
 TEXT_NEXT_TIME = TEXT_DELAY
+
+palavras = []
+pos_xs = []
 
 class Palavra:
     def __init__(self, text: str, pos_x, pos_y=pos_y):
@@ -56,24 +58,12 @@ class Palavra:
         self.text = "".join(_text)
         self.text_render = FONT.render(self.text, True, PINK)
 
-
-palavras = []
-pos_xs = []
-
-
 LARGURA_MAX = 150
 def nova_posicao_x():
     pos_x = randint(0, LARGURA_MAX)
-<<<<<<< HEAD
-    for i, palavra in enumerate(palavras):
-        if (pos_x != palavra.x) and (palavra.y >= ALT_MIN_ENTRE_PALAVRAS):
-            break
-        else:
-            pos_x = randint(0, LARGURA_MAX)
-=======
+
     while pos_x in pos_xs:
         pos_x = randint(0, LARGURA_MAX)
->>>>>>> dev
 
     pos_xs.append(pos_x)
     return pos_x
