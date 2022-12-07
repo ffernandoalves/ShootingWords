@@ -1,0 +1,1 @@
+resposta para [Jogo usando palavras no Pygame](https://pt.stackoverflow.com/q/570815/196624)
